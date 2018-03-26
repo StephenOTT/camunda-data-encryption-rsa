@@ -76,7 +76,6 @@ Raw usage is as follows:
 ```javascript
 load('classpath:rsaEncrypt.js')
 var messageToSeal = 'This message is to be hidden'
-
 var sealedObject = rsaSeal(messageToSeal, PUBLIC_KEY)
 execution.setVariable('sealed_object', sealedObject)
 ```

@@ -17,6 +17,7 @@ RSA Code usage: https://www.veracode.com/blog/research/encryption-and-decryption
 2. Add RSA Key Version as a String based process variable 
     so process instances that use specific versions of encryption 
     can be found
+3. Add better error handling and exception caching
 
 */
 
