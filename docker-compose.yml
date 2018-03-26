@@ -1,0 +1,18 @@
+version: '3.2'
+
+services:
+  camunda:
+    build: .
+    environment:
+      - JAVA_OPTS=-Djava.security.egd=file:/dev/./urandom -Duser.timezone=America/Montreal
+      - BPM_PUBLIC_KEY=/bpm_keys/public_key.der
+      - BPM_PRIVATE_KEY=/bpm_keys/private_key.der
+    ports:
+      - "8080:8080"
+    volumes:
+      - /Users/MyUser/docker_volumes/bpm_keys:/bpm_keys
+    networks:
+      - mynetwork
+networks:
+  mynetwork:
+    driver: bridge
