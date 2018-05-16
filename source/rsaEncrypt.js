@@ -85,7 +85,6 @@ function generateRsaKeys(){
 // Loads the public key (.der) from the provided file path
 function loadPublicKey(fileNamePath, setGlobal){
   var keyBytes = java.nio.file.Files.readAllBytes(java.nio.file.Paths.get(fileNamePath))
-  java.lang.System.out.println(keyBytes.toString())
   var spec = new java.security.spec.X509EncodedKeySpec(keyBytes)
   var kf = java.security.KeyFactory.getInstance("RSA")
   var publicKey = kf.generatePublic(spec)
@@ -100,7 +99,6 @@ function loadPublicKey(fileNamePath, setGlobal){
 // Loads the private key (.der) from the provided file path
 function loadPrivateKey(fileNamePath, setGlobal){
   var keyBytes = java.nio.file.Files.readAllBytes(java.nio.file.Paths.get(fileNamePath))
-  java.lang.System.out.println(keyBytes)
   var spec = new java.security.spec.PKCS8EncodedKeySpec(keyBytes)
   var kf = java.security.KeyFactory.getInstance("RSA")
   var privateKey = kf.generatePrivate(spec)

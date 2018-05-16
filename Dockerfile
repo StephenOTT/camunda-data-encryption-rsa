@@ -5,3 +5,4 @@ COPY docker/camunda/conf/ /camunda/conf
 
 # add JS script for RSA encryption
 COPY docker/camunda/lib/rsaEncrypt.js /camunda/lib/rsaEncrypt.js
+COPY docker/camunda/lib/rsaSignedObject.js /camunda/lib/rsaSignedEncrypt.js

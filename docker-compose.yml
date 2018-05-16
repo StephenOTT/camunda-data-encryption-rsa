@@ -10,7 +10,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - /Users/MyUser/docker_volumes/bpm_keys:/bpm_keys
+      - ../docker_volumes/bpm_keys:/bpm_keys
     networks:
       - mynetwork
 networks:

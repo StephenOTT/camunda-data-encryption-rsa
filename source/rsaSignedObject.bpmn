@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="1.11.2">
+  <bpmn:process id="rsa_signed_object" name="RSA Signed Object" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>SequenceFlow_1uido2z</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_1uido2z" sourceRef="StartEvent_1" targetRef="Task_0wn4rbm" />
+    <bpmn:sequenceFlow id="SequenceFlow_1qboaga" sourceRef="Task_0wn4rbm" targetRef="Task_0dsf9n1" />
+    <bpmn:userTask id="Task_0dsf9n1" name="placeholder">
+      <bpmn:incoming>SequenceFlow_1qboaga</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_0cqfjho</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:endEvent id="EndEvent_0np0efb">
+      <bpmn:incoming>SequenceFlow_0cqfjho</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="SequenceFlow_0cqfjho" sourceRef="Task_0dsf9n1" targetRef="EndEvent_0np0efb" />
+    <bpmn:scriptTask id="Task_0wn4rbm" name="RSA Signed Object" scriptFormat="javascript" camunda:resource="deployment://rsaSignedObject.js">
+      <bpmn:incoming>SequenceFlow_1uido2z</bpmn:incoming>
+      <bpmn:outgoing>SequenceFlow_1qboaga</bpmn:outgoing>
+    </bpmn:scriptTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="rsa_signed_object">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="211" y="174" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="184" y="210" width="90" height="20" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_1uido2z_di" bpmnElement="SequenceFlow_1uido2z">
+        <di:waypoint xsi:type="dc:Point" x="247" y="192" />
+        <di:waypoint xsi:type="dc:Point" x="307" y="192" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="277" y="170.5" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_1qboaga_di" bpmnElement="SequenceFlow_1qboaga">
+        <di:waypoint xsi:type="dc:Point" x="407" y="192" />
+        <di:waypoint xsi:type="dc:Point" x="473" y="192" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="440" y="170.5" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_0gita1s_di" bpmnElement="Task_0dsf9n1">
+        <dc:Bounds x="473" y="152" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="EndEvent_0np0efb_di" bpmnElement="EndEvent_0np0efb">
+        <dc:Bounds x="646" y="174" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="664" y="213" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="SequenceFlow_0cqfjho_di" bpmnElement="SequenceFlow_0cqfjho">
+        <di:waypoint xsi:type="dc:Point" x="573" y="192" />
+        <di:waypoint xsi:type="dc:Point" x="646" y="192" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="609.5" y="170" width="0" height="13" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="ScriptTask_0fpeoc5_di" bpmnElement="Task_0wn4rbm">
+        <dc:Bounds x="307" y="152" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
